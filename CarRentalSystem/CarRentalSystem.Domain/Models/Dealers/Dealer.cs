@@ -11,6 +11,7 @@ namespace CarRentalSystem.Domain.Models.Dealers
     {
         private readonly HashSet<CarAd> _carAds;
 
+        //DDD rule: only aggregate root entities` constructors should be public
         //DDD rule: the constructor should validate object/s
         //PhoneNumber validation is not required as it is in other class where the validation happen
         public Dealer(string name, PhoneNumber phoneNumber)

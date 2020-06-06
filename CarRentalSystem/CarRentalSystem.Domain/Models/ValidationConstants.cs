@@ -21,5 +21,11 @@ namespace CarRentalSystem.Domain.Models
             public const string PhoneNumberFirstSymbol = "+";
         }
 
+        public class CarAd 
+        {
+            public const int MinModelLength = 1;
+            public const int MaxModelLength = 20;
+            public const int Zero = 0;
+        }
     }
 }
