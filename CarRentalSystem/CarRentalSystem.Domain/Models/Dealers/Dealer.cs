@@ -3,6 +3,7 @@ using CarRentalSystem.Domain.Exceptions;
 using CarRentalSystem.Domain.Models.CarAds;
 using System.Collections.Generic;
 using System.Linq;
+using static CarRentalSystem.Domain.Models.ValidationConstants.Common;
 
 namespace CarRentalSystem.Domain.Models.Dealers
 {
@@ -31,22 +32,18 @@ namespace CarRentalSystem.Domain.Models.Dealers
         public IReadOnlyCollection<CarAd> CarAds => this._carAds.ToList().AsReadOnly();
 
 
-        //TODO: Move min and max length to model constants class
-        private void Validate(string name)
-        {
-            Guard.ForStringLength<InvalidDealerException>(
-                name,
-                minLength: 2,
-                maxLength: 20,
-                nameof(this.Name));
-        }
-
         public void AddCarAd(CarAd carAd) 
         {
             this._carAds.Add(carAd);
         }
-        
 
-
+        private void Validate(string name)
+        {
+            Guard.ForStringLength<InvalidDealerException>(
+                name,
+                MinNameLength,
+                MaxNameLength,
+                nameof(this.Name));
+        }
     }
 }

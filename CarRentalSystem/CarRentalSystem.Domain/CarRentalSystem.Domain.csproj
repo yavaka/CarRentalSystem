@@ -6,11 +6,6 @@
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
-  
-  <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
 
 </Project>
+

@@ -55,7 +55,7 @@
         public static void ForValidUrl<TException>(string url, string name = "Value")
             where TException : BaseDomainException, new()
         {
-            if (url.Length <= ModelConstants.Common.MaxUrlLength && 
+            if (url.Length <= ValidationConstants.Common.MaxUrlLength && 
                 Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute))
             {
                 return;
