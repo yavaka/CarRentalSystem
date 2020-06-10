@@ -34,5 +34,11 @@ namespace CarRentalSystem.Domain.Models
             public const int MaxDescriptionLength = 2000;
 
         }
+        
+        public class Options
+        {
+            public const int MinNumberOfSeats = 2;
+            public const int MaxNumberOfSeats = 10;
+        }
     }
 }
