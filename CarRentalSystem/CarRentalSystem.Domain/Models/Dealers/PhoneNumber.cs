@@ -6,7 +6,8 @@ namespace CarRentalSystem.Domain.Models.Dealers
 {
     public class PhoneNumber : ValueObject
     {
-        //DDD rule: Value objects should be internal
+        //DDD rule: only aggregate root entities` constructors should be public
+        //DDD rule: the constructor should validate object/s
         internal PhoneNumber(string phoneNumber)
         {
             this.Validate(phoneNumber);

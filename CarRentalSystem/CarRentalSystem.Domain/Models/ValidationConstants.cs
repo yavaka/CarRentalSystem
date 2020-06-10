@@ -23,9 +23,16 @@ namespace CarRentalSystem.Domain.Models
 
         public class CarAd 
         {
-            public const int MinModelLength = 1;
+            public const int MinModelLength = 2;
             public const int MaxModelLength = 20;
-            public const int Zero = 0;
+
+        }
+
+        public class Category
+        {
+            public const int MinDescriptionLength = 20;
+            public const int MaxDescriptionLength = 2000;
+
         }
     }
 }
