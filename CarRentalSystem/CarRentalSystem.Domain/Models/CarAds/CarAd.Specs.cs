@@ -1,4 +1,5 @@
 ﻿using CarRentalSystem.Domain.Exceptions;
+using FakeItEasy;
 using FluentAssertions;
 using System;
 using Xunit;
@@ -97,10 +98,10 @@ namespace CarRentalSystem.Domain.Models.CarAds
         }
 
         [Fact]
-        public void ChangeAvailabilityShouldMutateIsAvailable()
+        public void InvalidOptionsShouldThrowException()
         {
-            //Arrange
-            var carAd = new CarAd(
+            //Act
+            Action act = () => new CarAd(
                  make: new Make(name: "Subaru"),
                  model: "Impreza",
                  category: new Category(
@@ -110,9 +111,19 @@ namespace CarRentalSystem.Domain.Models.CarAds
                  pricePerDay: 50.00m,
                  options: new Options(
                      hasClimateControl: true,
-                     seats: 5,
+                     seats: 11,
                      transmissionType: TransmissionType.Manual),
                  isAvailable: true);
+
+            //Assert
+            act.Should().Throw<InvalidOptionsException>();
+        }
+
+        [Fact]
+        public void ChangeAvailabilityShouldMutateIsAvailable()
+        {
+            //Arrange
+            var carAd = A.Dummy<CarAd>();
 
             //Act
             carAd.ChangeAvailability();
@@ -120,5 +131,6 @@ namespace CarRentalSystem.Domain.Models.CarAds
             //Assert
             carAd.IsAvailable.Should().BeFalse();
         }
+
     }
 }
