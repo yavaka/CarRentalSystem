@@ -1,6 +1,7 @@
 ﻿using CarRentalSystem.Domain.Common;
 using CarRentalSystem.Domain.Exceptions;
 using static CarRentalSystem.Domain.Models.ValidationConstants.CarAd;
+using static CarRentalSystem.Domain.Models.ValidationConstants.Common;
 
 namespace CarRentalSystem.Domain.Models.CarAds
 {
