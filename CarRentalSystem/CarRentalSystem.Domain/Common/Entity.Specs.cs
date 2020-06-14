@@ -10,8 +10,8 @@ namespace CarRentalSystem.Domain.Common
         public void EntitiesWithEqualIdsShouldBeEqual() 
         {
             //Arrange
-            var first = new Make("Subaru Impreza").SetId(1);
-            var second = new Make("Subaru Legacy").SetId(1);
+            var first = new Make(name: "Subaru Impreza").SetId(1);
+            var second = new Make(name: "Subaru Legacy").SetId(1);
 
             //Act
             var result = first == second;
@@ -24,8 +24,8 @@ namespace CarRentalSystem.Domain.Common
         public void EntitiesWithDifferentIdsShouldNotBeEqual()
         {
             //Arrange
-            var first = new Make("Subaru Impreza").SetId(1);
-            var second = new Make("Mercedes E63").SetId(2);
+            var first = new Make(name: "Subaru Impreza").SetId(1);
+            var second = new Make(name: "Mercedes E63").SetId(2);
 
             //Act
             var result = first == second;
