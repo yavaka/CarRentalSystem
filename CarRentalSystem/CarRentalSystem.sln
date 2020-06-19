@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem.Domain", "CarRentalSystem.Domain\CarRentalSystem.Domain.csproj", "{411BEFEA-DB80-43FA-850A-C46B17A9961B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalSystem.Domain", "CarRentalSystem.Domain\CarRentalSystem.Domain.csproj", "{411BEFEA-DB80-43FA-850A-C46B17A9961B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem.Startup", "CarRentalSystem.Startup\CarRentalSystem.Startup.csproj", "{EFA39FC4-5CB7-4FFA-BAFD-FDE0D50F08CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{411BEFEA-DB80-43FA-850A-C46B17A9961B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{411BEFEA-DB80-43FA-850A-C46B17A9961B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{411BEFEA-DB80-43FA-850A-C46B17A9961B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA39FC4-5CB7-4FFA-BAFD-FDE0D50F08CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA39FC4-5CB7-4FFA-BAFD-FDE0D50F08CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA39FC4-5CB7-4FFA-BAFD-FDE0D50F08CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA39FC4-5CB7-4FFA-BAFD-FDE0D50F08CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
