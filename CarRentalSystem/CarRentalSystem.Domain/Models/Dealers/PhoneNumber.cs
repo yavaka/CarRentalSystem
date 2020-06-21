@@ -15,6 +15,13 @@ namespace CarRentalSystem.Domain.Models.Dealers
             this.Number = phoneNumber;
         }
 
+        //DDD rule: entities cannot be created with an invalid state.
+        //EF Core wants constructors that bind non-navigational props.
+        private PhoneNumber()
+        {
+            this.Number = default!;
+        }
+
 
         public string Number { get; }
 

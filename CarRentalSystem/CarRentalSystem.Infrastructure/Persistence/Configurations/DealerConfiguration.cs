@@ -31,7 +31,7 @@ namespace CarRentalSystem.Infrastructure.Persistence.Configurations
                 .WithOne()
                 .Metadata
                 .PrincipalToDependent
-                .SetField("carAds");
+                .SetField("_carAds");
         }
     }
 }

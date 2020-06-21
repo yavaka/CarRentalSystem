@@ -29,6 +29,24 @@ namespace CarRentalSystem.Domain.Models.CarAds
             this.IsAvailable = isAvailable;
         }
 
+        //DDD rule: entities cannot be created with an invalid state.
+        //EF Core wants constructors that bind non-navigational props.
+        private CarAd(
+            string model,
+            string imageUrl,
+            decimal pricePerDay,
+            bool isAvailable)
+        {
+            this.Model = model;
+            this.ImageUrl = imageUrl;
+            this.PricePerDay = pricePerDay;
+            this.IsAvailable = isAvailable;
+
+            this.Make = default!;
+            this.Category = default!;
+            this.Options = default!;
+        }
+
 
         public Make Make{ get; }
 

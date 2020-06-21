@@ -17,6 +17,15 @@ namespace CarRentalSystem.Domain.Models.CarAds
             this.TransmissionType = transmissionType;
         }
 
+        //DDD rule: entities cannot be created with an invalid state.
+        //EF Core wants constructors that bind non-navigational props.
+        private Options(bool hasClimateControl, int seats)
+        {
+            this.HasClimateControl = hasClimateControl;
+            this.Seats = seats;
+            this.TransmissionType = default!;
+        }
+
 
         public bool HasClimateControl { get; }
 
