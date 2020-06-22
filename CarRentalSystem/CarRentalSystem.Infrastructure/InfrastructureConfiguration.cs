@@ -18,6 +18,8 @@ namespace CarRentalSystem.Infrastructure
                                .UseSqlServer(
                                    configuration.GetConnectionString("DefaultConnection"),
                                    b => b.MigrationsAssembly(typeof(CarRentalDbContext).Assembly.FullName)))
+                //Register db initializer
+                .AddTransient<IInitializer, CarRentalDbInitializer>()
                 //Register repository
                 .AddTransient(typeof(IRepository<>), typeof(DataRepository<>));
         }
