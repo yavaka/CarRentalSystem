@@ -16,6 +16,16 @@ namespace CarRentalSystem.Domain.Factories.Dealers
            
         }
 
+        //Such this methods are recommended for models with low amount of properties
+        public Dealer Build(string name, string phoneNumber)
+        {
+            return this
+                .WithName(name)
+                .WithPhoneNumber(phoneNumber)
+                .Build();
+
+        }
+
         public IDealerFactory WithName(string name)
         {
             this.dealerName = name;

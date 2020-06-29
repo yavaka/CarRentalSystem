@@ -1,4 +1,6 @@
-﻿using CarRentalSystem.Domain.Models.CarAds;
+﻿using CarRentalSystem.Domain.Exceptions;
+using CarRentalSystem.Domain.Models.CarAds;
+using System;
 
 namespace CarRentalSystem.Domain.Factories.CarAds
 {
@@ -11,9 +13,18 @@ namespace CarRentalSystem.Domain.Factories.CarAds
         private decimal pricePerDay = default!;
         private Options options = default!;
 
+        private bool isMakeSet = false;
+        private bool isCategorySet = false;
+        private bool areOptionsSet = false;
+
 
         public CarAd Build()
         {
+            if (!this.isMakeSet || !this.isCategorySet || !this.areOptionsSet)
+            {
+                throw new InvalidCarAdException("Make, Category, Options must have value.");
+            }
+
             return new CarAd(
                 make: this.make,
                 model: this.model,
@@ -34,6 +45,7 @@ namespace CarRentalSystem.Domain.Factories.CarAds
         public ICarAdFactory WithMake(Make make)
         {
             this.make = make;
+            this.isMakeSet = true;
             return this;
         }
 
@@ -52,6 +64,7 @@ namespace CarRentalSystem.Domain.Factories.CarAds
         public ICarAdFactory WithCategory(Category category)
         {
             this.category = category;
+            this.isCategorySet = true;
             return this;
         }
 
@@ -79,6 +92,7 @@ namespace CarRentalSystem.Domain.Factories.CarAds
         public ICarAdFactory WithOptions(Options options)
         {
             this.options = options;
+            this.areOptionsSet = true;
             return this;
         }
     }
