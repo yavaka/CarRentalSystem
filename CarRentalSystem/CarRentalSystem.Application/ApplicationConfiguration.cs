@@ -10,9 +10,10 @@ namespace CarRentalSystem.Application
         public static IServiceCollection AddApplication(this IServiceCollection services,
             IConfiguration configuration)
         {
-            return services.Configure<ApplicationSettings>(
-                configuration.GetSection(nameof(ApplicationSettings)),
-                options => options.BindNonPublicProperties = true)
+            return services
+                .Configure<ApplicationSettings>(
+                    configuration.GetSection(nameof(ApplicationSettings)),
+                    options => options.BindNonPublicProperties = true)
                 //configures MediatR
                 .AddMediatR(Assembly.GetExecutingAssembly());
         }

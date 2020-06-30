@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CarRentalSystem.Application.Features.Identity
+namespace CarRentalSystem.Application.Features.Identity.Commands
 {
     public class LoginOutputModel
     {
