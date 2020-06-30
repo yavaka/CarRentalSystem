@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using MediatR;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace CarRentalSystem.Application
 {
@@ -10,7 +12,9 @@ namespace CarRentalSystem.Application
         {
             return services.Configure<ApplicationSettings>(
                 configuration.GetSection(nameof(ApplicationSettings)),
-                options => options.BindNonPublicProperties = true);
+                options => options.BindNonPublicProperties = true)
+                //configures MediatR
+                .AddMediatR(Assembly.GetExecutingAssembly());
         }
     }
 }
